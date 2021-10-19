@@ -42,8 +42,11 @@ jobs:
       
     - name: set up MySql using docker-compose file
       run: docker-compose up -d 
+    
     - name: Verify MySQL connection
       run: |
           mysql --version
           sudo apt-get install -y mysql-client
-          mysql --host 0.0.0.0 --port ${{ secrets.DB_PORT }} --user ${{ secrets.DB_USER }} --password ${{ secrets.DB_PASSWORD }} -e "SHOW DATABASES"
+          mysql --host 0.0.0.0 --port 3306 --user petclinic --password petclinic -e "SHOW DATABASES"
+
+          #mysql --host 0.0.0.0 --port ${{ secrets.DB_PORT }} --user ${{ secrets.DB_USER }} --password ${{ secrets.DB_PASSWORD }} -e "SHOW DATABASES"
