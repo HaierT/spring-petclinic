@@ -46,4 +46,4 @@ jobs:
       run: |
           mysql --version
           sudo apt-get install -y mysql-client
-          mysql --host 0.0.0.0 --port ${{ secrets.DB_PORT }} --user=${{ secrets.DB_USER }} --password${{ secrets.DB_PASSWORD }} -e "SHOW DATABASES"
+          mysql --host 0.0.0.0 --port ${{ secrets.DB_PORT }} --user ${{ secrets.DB_USER }} --password ${{ secrets.DB_PASSWORD }} -e "SHOW DATABASES"
