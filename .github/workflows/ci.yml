@@ -46,5 +46,5 @@ jobs:
     - name: Test MySql connection
       run:
           sudo apt-get install mysql-client
-          #mysql --host=0.0.0.0 --user=${{ secrets.DB_USER }} --password${{ secrets.DB_PASSWORD }} -e "SHOW DATABASES"
+          mysql --host=0.0.0.0 --user=${{ secrets.DB_USER }} --password${{ secrets.DB_PASSWORD }} -e "SHOW DATABASES"
       
