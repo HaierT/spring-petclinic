@@ -40,6 +40,6 @@ jobs:
     - name: Build with Maven
       run: mvn -B package --file pom.xml
       
-    - name: set up MySql instance
+    - name: set up MySql using docker-compose file
       run: docker-compose up -d 
       
