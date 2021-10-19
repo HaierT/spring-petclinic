@@ -42,11 +42,8 @@ jobs:
       
     - name: set up MySql using docker-compose file
       run: docker-compose up -d
-      
-    - name: Test MySql connection
-      run:
-          sudo apt-get install mysql-client
-          mysql --host=0.0.0.0 --user=${{ secrets.DB_USER }} --password${{ secrets.DB_PASSWORD }} -e "SHOW DATABASES"
-          #mysql -u ${{ secrets.DB_USER }} -p ${{ secrets.DB_PASSWORD }} -e "SHOW DATABASES"
-          #mysql -user=${{ secrets.DB_USER }} -password${{ secrets.DB_PASSWORD }} -e "SHOW DATABASES"
-      
+    - name: Verify MySQL connection
+      run: |
+          mysql --version
+          sudo apt-get install -y mysql-client
+          #mysql --host=0.0.0.0 --port ${{ secrets.DB_PORT }} --user=${{ secrets.DB_USER }} --password${{ secrets.DB_PASSWORD }} -e "SHOW DATABASES"
