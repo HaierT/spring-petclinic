@@ -42,7 +42,7 @@ jobs:
       
     - name: set up MySql using docker-compose file
       run: docker-compose up -d
-      
+           mvn spring-boot:run -Dspring-boot.run.profiles=mysql
     - name: Verify MySQL connection
       run: |
           mysql --version
