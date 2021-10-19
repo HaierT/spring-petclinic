@@ -41,5 +41,9 @@ jobs:
       run: mvn -B package --file pom.xml
       
     - name: set up MySql using docker-compose file
-      run: docker-compose up -d 
+      run: docker-compose up -d
+      
+    - name: Test MySql connection
+      run:
+          sudo apt-get install mysql-client
       
