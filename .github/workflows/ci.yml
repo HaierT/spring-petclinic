@@ -68,4 +68,4 @@ jobs:
         - name: curl
           uses: wei/curl@master
           with:
-            args: https:/localhost:8080
+            args: http://localhost:8080/
